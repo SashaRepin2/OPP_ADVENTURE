@@ -9,21 +9,18 @@ public static class SaveSystem
 
     private static string path = Application.persistentDataPath + "/progress.save";
 
-    public static void SaveProgressPlayer(ProgressData data)
+    public static void SaveProgress(ProgressData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
-        
-
         FileStream fileStream = new FileStream(path, FileMode.Create);
-
-
 
         formatter.Serialize(fileStream, data);
         fileStream.Close();
     }
 
-    public static ProgressData LoadProgress() {
+    public static ProgressData LoadProgress()
+    {
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -35,10 +32,18 @@ public static class SaveSystem
 
             return data;
         }
-        else {
+        else
+        {
             Debug.LogError("Save file not found. Path: " + path);
             return null;
         }
+    }
+
+
+
+    public static bool SaveFileExist()
+    {
+        return File.Exists(path);
     }
 
 

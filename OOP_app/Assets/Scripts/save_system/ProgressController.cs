@@ -4,26 +4,47 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ProgressController : MonoBehaviour
 {
+    public Button[] arrayLevelButtons;
+    public Image[] arrayLockButtons;
+
+    private ProgressData data;
 
     public void Awake()
     {
-        // ≈сли не нашел - значит нова€ игра и возвращет false
-        bool isNewGame = PlayerPrefs.HasKey("IsNewGame");
-
-        if (isNewGame)
+        if (SaveSystem.SaveFileExist())
         {
-            ProgressData data = new ProgressData();
-            SaveSystem.SaveProgressPlayer(data);
-            PlayerPrefs.SetInt("IsNewGame", !isNewGame ? 1 : 0);
+            data = SaveSystem.LoadProgress();
+            Test();
         }
         else
         {
-            PlayerPrefs.SetInt("IsNewGame", !isNewGame ? 1 : 0);
 
+            ArrayList temp = new ArrayList();
 
+            temp.Add(new Level(numberOfLevel: 3, isOpened: true, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 4, isOpened: false, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 5, isOpened: false, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 6, isOpened: false, isCompleted: false, valueOfProgress: 25));
 
+            data = new ProgressData(temp);
+            SaveSystem.SaveProgress(data);
         }
     }
 
+    private void Test()
+    {
+
+        for (int i = 0; i < arrayLevelButtons.Length; i++)
+        {
+            Level temp = data.Levels[i] as Level;
+
+            arrayLevelButtons[i].interactable = temp.isOpened;
+            arrayLockButtons[i].enabled = !temp.isOpened;
+            //lockImage.enabled = !temp.isOpened;
+
+
+        }
+
+    }
 
 }
