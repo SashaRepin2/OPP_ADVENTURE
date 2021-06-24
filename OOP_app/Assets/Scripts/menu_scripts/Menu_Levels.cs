@@ -5,17 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Levels : MonoBehaviour
 {
-    public void onBackButtonClick() {
-        SceneManager.LoadScene(0);
-    }
-
-    public void onProgressButtonClick() {
-        SceneManager.LoadScene(2);
-    }
-
-    public void onLevelClick()
+    public void onLoadSceneButtonClick(int numberOfScene = 0)
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(numberOfScene);
     }
 
+    public void Awake()
+    {
+        InitializePlayerData();
+
+
+
+    }
+
+    private void InitializePlayerData()
+    {
+   
+    }
 }

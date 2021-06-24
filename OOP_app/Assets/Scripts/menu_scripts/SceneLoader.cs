@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
     /// <summary>
-    /// Scene. Default is 0
+    /// Func loading scene using number of scene.
     /// </summary>
-    public int numberOfScene = 0;
-
-    /// <summary>
-    /// Func loading scene
-    /// </summary>
-    public void LoadScene()
+    public void LoadSceneByIndex(int numberOfScene = 0)
     {
         SceneManager.LoadScene(numberOfScene);
+    }
+
+    public void LoadSceneByName(string nameOfScene = "menu")
+    {
+        SceneManager.LoadScene(nameOfScene);
     }
 }

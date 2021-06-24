@@ -7,11 +7,6 @@ public class AuthManager : MonoBehaviour
 {
 
     /// <summary>
-    /// Number of scene. Deffault is 1.
-    /// </summary>
-    public int levelToLoad = 1;
-
-    /// <summary>
     /// Login Input Field
     /// </summary>
     public InputField loginField;
@@ -51,21 +46,16 @@ public class AuthManager : MonoBehaviour
             {
                 if (user.Value == inputedPassword)
                 {
-                    LoadScene();
+                    SceneManager.LoadScene(1);
+
                     Debug.Log("User is logged");
                     break;
                 };
             }
         }
 
+
         Debug.Log("User is not logged");
-
-    }
-
-
-    private void LoadScene()
-    {
-        SceneManager.LoadScene(levelToLoad);
     }
 
     public void ExitFromApp()

@@ -5,24 +5,25 @@ using UnityEngine.UI;
 public class ProgressController : MonoBehaviour
 {
 
-    public ArrayList levelsInfo;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        levelsInfo = new ArrayList();
+        // ≈сли не нашел - значит нова€ игра и возвращет false
+        bool isNewGame = PlayerPrefs.HasKey("IsNewGame");
 
-        if (!PlayerPrefs.HasKey("GeneralProgress")) { 
+        if (isNewGame)
+        {
+            ProgressData data = new ProgressData();
+            SaveSystem.SaveProgressPlayer(data);
+            PlayerPrefs.SetInt("IsNewGame", !isNewGame ? 1 : 0);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("IsNewGame", !isNewGame ? 1 : 0);
+
+
 
         }
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -214,9 +214,9 @@ GameObject:
   - component: {fileID: 247594710}
   - component: {fileID: 247594709}
   - component: {fileID: 247594708}
+  - component: {fileID: 247594713}
   - component: {fileID: 247594712}
   - component: {fileID: 247594714}
-  - component: {fileID: 247594713}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Frame
@@ -321,7 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95330eb3c7cd1cc409a7838248d22650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 1
   loginField: {fileID: 1850315372}
   passwordField: {fileID: 971187457}
 --- !u!61 &247594713
@@ -491,7 +490,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
