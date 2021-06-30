@@ -13,6 +13,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(numberOfScene);
     }
 
+    /// <summary>
+    /// Func loading scene by name
+    /// </summary>
+    /// <param name="nameOfScene"></param>
     public void LoadSceneByName(string nameOfScene = "menu")
     {
         SceneManager.LoadScene(nameOfScene);

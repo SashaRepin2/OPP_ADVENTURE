@@ -10,7 +10,7 @@ public class ProgressBar : MonoBehaviour
     private ParticleSystem particleSys;
 
     public float fillSpeed = .5f;
-    public float currentProgress = 50f;
+    public float currentProgress = 0;
 
     private void Awake()
     {
@@ -43,6 +43,6 @@ public class ProgressBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        textCurrProgress.text = slider.value.ToString("###") + " %";
+        textCurrProgress.text = slider.value.ToString("##0") + " %";
     }
 }
