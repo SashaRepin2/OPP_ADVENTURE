@@ -14,37 +14,32 @@ public class ProgressController : MonoBehaviour
         if (SaveSystem.SaveFileExist())
         {
             data = SaveSystem.LoadProgress();
-            Test();
+            OpenLevels();
         }
         else
         {
-
             ArrayList temp = new ArrayList();
 
-            temp.Add(new Level(numberOfLevel: 3, isOpened: true, isCompleted: false, valueOfProgress: 25));
-            temp.Add(new Level(numberOfLevel: 4, isOpened: false, isCompleted: false, valueOfProgress: 25));
-            temp.Add(new Level(numberOfLevel: 5, isOpened: false, isCompleted: false, valueOfProgress: 25));
-            temp.Add(new Level(numberOfLevel: 6, isOpened: false, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 3, nameOfLevel: "Level_Inheritance", isOpened: true, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 3, nameOfLevel: "Level_Encapsulation", isOpened: false, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 0, nameOfLevel: "Unknow", isOpened: false, isCompleted: false, valueOfProgress: 25));
+            temp.Add(new Level(numberOfLevel: 0, nameOfLevel: "Unknow", isOpened: false, isCompleted: false, valueOfProgress: 25));
 
             data = new ProgressData(temp);
             SaveSystem.SaveProgress(data);
+
+            OpenLevels();
         }
     }
 
-    private void Test()
+    private void OpenLevels()
     {
-
         for (int i = 0; i < arrayLevelButtons.Length; i++)
         {
             Level temp = data.Levels[i] as Level;
 
             arrayLevelButtons[i].interactable = temp.isOpened;
             arrayLockButtons[i].enabled = !temp.isOpened;
-            //lockImage.enabled = !temp.isOpened;
-
-
         }
-
     }
-
 }

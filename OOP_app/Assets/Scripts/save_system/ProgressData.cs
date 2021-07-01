@@ -10,26 +10,26 @@ public class ProgressData
 
     public ArrayList Levels { get { return levels; } set { levels = value; } }
 
-    public ProgressData()
-    {
-        levels = new ArrayList();
-        levels.Add(new Level(3, false, true, 25));
-        levels.Add(new Level(4, false, false, 25));
-        levels.Add(new Level(5, false, false, 25));
-        levels.Add(new Level(6, false, false, 25));
-    }
-
     public ProgressData(ArrayList array)
     {
-        levels = array;
+        this.levels = array;
     }
 
     public void ResetProgress()
     {
-
-        foreach (Level level in levels)
+        for (int i = 0; i < levels.Count; i++)
         {
+            Level level = levels[i] as Level;
             level.isCompleted = false;
+
+            if (i == 0)
+            {
+                level.isOpened = true;
+            }
+            else
+            {
+                level.isOpened = false;
+            }
         }
     }
 }
@@ -38,6 +38,7 @@ public class ProgressData
 public class Level
 {
     public int NumberOfLevel { get; set; }
+    public string NameOfLevel { get; set; }
     public bool isCompleted { get; set; }
     public float ValueOfProgress { get; set; }
     public bool isOpened { get; set; }
@@ -48,14 +49,16 @@ public class Level
         this.isCompleted = false;
         this.ValueOfProgress = 0;
         this.isOpened = false;
+        this.NameOfLevel = "menu";
     }
 
-    public Level(int numberOfLevel, bool isCompleted, bool isOpened, float valueOfProgress)
+    public Level(int numberOfLevel, string nameOfLevel, bool isCompleted, bool isOpened, float valueOfProgress)
     {
         this.NumberOfLevel = numberOfLevel;
         this.isCompleted = isCompleted;
         this.ValueOfProgress = valueOfProgress;
         this.isOpened = isOpened;
+        this.NameOfLevel = nameOfLevel;
     }
 }
 
