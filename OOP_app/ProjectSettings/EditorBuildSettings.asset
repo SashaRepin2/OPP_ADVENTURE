@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Scenes/ComputerClass.unity
     guid: 5c0353225cec783438b0c5da3528369c
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Level_inheritance.unity
+    guid: 3908bf314878c5741a9db6466b35799b
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Classroom.unity
+    guid: 78aa5681f0280f742bfb559aa573e240
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Checkroom.unity
+    guid: 1e68ece0648f02b479c6015907691a56
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/InMedOffice.unity
+    guid: 87749b9f6aeed6a4188b8f2cf2797387
   m_configObjects: {}

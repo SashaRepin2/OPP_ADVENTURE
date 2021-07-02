@@ -555,7 +555,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Level_Encapsulation
+          m_StringArgument: Level_inheritance
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &569243306
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bafd62b0dc60d45945d647f3675017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -11.33, y: -1.64, z: 0}
+  position: {x: -11, y: -1.65, z: 0}
   playerStorage: {fileID: 11400000, guid: 081f5af8068e1154888ae27d857e00d7, type: 2}
 --- !u!1 &576306409
 GameObject:

@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         transform.position = pos.initialValue;
-        //Получаем риджидбади
-        rb = GetComponent<Rigidbody2D>();
         //Получаем аниматор
         anim = GetComponent<Animator>();
+        //Получаем риджидбади
+        rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
     {

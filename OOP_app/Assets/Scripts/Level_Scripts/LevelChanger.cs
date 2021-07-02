@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class LevelChanger : MonoBehaviour
 {
     private Animator anim;
-    //public int levelToLoad;
     public string levelToLoad;
 
     public Vector3 position;
@@ -19,7 +18,6 @@ public class LevelChanger : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        loadingScreen.SetActive(false);
     }
     public void FadeToLevel()
     {

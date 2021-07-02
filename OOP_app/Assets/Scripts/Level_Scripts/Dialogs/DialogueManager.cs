@@ -22,14 +22,18 @@ public class DialogueManager : MonoBehaviour
         boxAnim.SetBool("boxOpen", true);
         startAnim.SetBool("startOpen", false);
 
-        nameText.text = dialogue.name;
+        //nameText.text = dialogue.name;
         sentences.Clear();
-
-        foreach(string sentence in dialogue.sentences)
+        for(int i = 0; i < dialogue.sentences.Length; i++)
         {
-            sentences.Enqueue(sentence);
-            DisplayNextSentence();
+            sentences.Enqueue(dialogue.name[i]);
+            sentences.Enqueue(dialogue.sentences[i]);
         }
+        //foreach(string sentence in dialogue.sentences)
+        //{
+        //    sentences.Enqueue(sentence);
+        //}
+        DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
@@ -38,13 +42,15 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        string name = sentences.Dequeue();
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(name ,sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string name, string sentence)
     {
+        nameText.text = name;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {

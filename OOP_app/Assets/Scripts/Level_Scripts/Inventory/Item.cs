@@ -6,6 +6,8 @@ public class Item : MonoBehaviour
 {
     private Inventory inventory;
     public int i; //Номер слота
+    public Canvas[] canvases;
+    private Animator anim;
 
     private void Start()
     {
@@ -17,6 +19,44 @@ public class Item : MonoBehaviour
         if(transform.childCount <= 0)
         {
             inventory.isFull[i] = false;
+        }
+    }
+    public void ShowItem()
+    {
+        Transform item = inventory.items[i].transform.GetChild(0);
+        switch (item.tag)
+        {
+            case "Node":
+                foreach(Canvas elem in canvases)
+                {
+                    if(elem.tag == item.tag)
+                    {
+                        anim = elem.GetComponent<Animator>();
+                        anim.SetBool("canvasOpen", true);
+                    }
+                }
+                break;
+            case "SecondNode":
+                foreach (Canvas elem in canvases)
+                {
+                    if (elem.tag == item.tag)
+                    {
+                        anim = elem.GetComponent<Animator>();
+                        anim.SetBool("canvasOpen", true);
+                    }
+                }
+                break;
+            case "ThirdNode":
+                foreach (Canvas elem in canvases)
+                {
+                    if (elem.tag == item.tag)
+                    {
+                        anim = elem.GetComponent<Animator>();
+                        anim.SetBool("canvasOpen", true);
+                    }
+                }
+                break;
+            default: break;
         }
     }
     public void DropItem()

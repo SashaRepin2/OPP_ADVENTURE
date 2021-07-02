@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 2206943284239525106, guid: f0d2ebbd4f2658e429c3e02a7729b0d7, type: 3}
+  canvas: {fileID: 6733427335008732553, guid: 981a94ecc6c55d243bd9c5492656b49e, type: 3}
